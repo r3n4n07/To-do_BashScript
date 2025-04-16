@@ -20,19 +20,19 @@ Ação: Inclui uma nova tarefa.
 
 ---
 
-Comando: `./tasks.sh -e "1 Nova tarefa"`
-
-Ação: Edita a tarefa de número 1.
-
-![Demonstração do Task Manager](img/edit.png)
-
----
-
 Comando: `./tasks.sh -c "2"`
 
 Ação: Marca a tarefa 2 como concluída.
 
 ![Demonstração do Task Manager](img/complete.png)
+
+---
+
+Comando: `./tasks.sh -e "1 Nova tarefa"`
+
+Ação: Edita a tarefa de número 1.
+
+![Demonstração do Task Manager](img/edit.png)
 
 ---
 
