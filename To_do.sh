@@ -23,13 +23,13 @@ isValidNumber () {
 }
 
 # Verifica se os argumentos são válidos
-argumentsTotal () {
-  argumentsTotalNumber=$1
+handleArguments () {
+  totalArgumentsNumber=$1
   maxArguments=$2
   argumentLetter=$3
   example=$4
 
-  if (($argumentsTotalNumber > $maxArguments)); then
+  if (($totalArgumentsNumber > $maxArguments)); then
     echo "Erro: ao utilizar a opção '$argumentLetter'."
     echo "Exemplo de como utilizar: $example">&2
     exit 1
@@ -41,7 +41,7 @@ isTaskEmpty () {
   taskValue=$1
 
   if [ -z "$taskValue" ]; then
-    echo "Erro: não se pode passar uma tarefar com valor vazio">&2
+    echo "Erro: não se pode passar uma tarefa com valor vazio.">&2
     exit 1
   fi
 }
@@ -72,7 +72,7 @@ while getopts "i:e:c:d:l" opt; do
 	# Recebe o valor do argumento passado na execução do script
 	task=$OPTARG
 
-	argumentsTotal $# "2" "-i" 'comando -i "minha tarefa é..."'
+	handleArguments $# "2" "-i" 'comando -i "minha tarefa é..."'
 
 	isTaskEmpty $task
 
@@ -106,7 +106,7 @@ while getopts "i:e:c:d:l" opt; do
 	# Recebe o valor do argumento passado na execução do script
 	taskNumber=$OPTARG
 
-	argumentsTotal $# "3" "-e" 'comando -e "1" "Minha tarefa editada"'
+	handleArguments $# "3" "-e" 'comando -e "1" "Minha tarefa editada"'
 
 	isValidNumber $taskNumber
 
@@ -141,7 +141,7 @@ while getopts "i:e:c:d:l" opt; do
 	# Recebe o valor do argumento passado na execução do script
 	taskNumber=$OPTARG
 
-	argumentsTotal $# "2" "-c" 'comando -c "1"'
+	handleArguments $# "2" "-c" 'comando -c "1"'
 
 	isValidNumber $taskNumber
 
@@ -172,7 +172,7 @@ while getopts "i:e:c:d:l" opt; do
 	# Recebe o valor do argumento passado na execução do script
 	taskNumber=$OPTARG
 
-	argumentsTotal $# "2" "-d" 'comando -d "1"'
+	handleArguments $# "2" "-d" 'comando -d "1"'
 
 	isValidNumber $taskNumber
 
@@ -202,10 +202,9 @@ while getopts "i:e:c:d:l" opt; do
 	cat "$tasksFilePath"
 	;;
      l)
+	# Este caso lista todas as tarefas
 
-	# Este caso lista as tarefas
-
-	argumentsTotal $# "1" "-l" 'comando -l'
+	handleArguments $# "1" "-l" 'comando -l'
 
 	checkFileExists "$tasksFilePath"
 
