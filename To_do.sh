@@ -1,4 +1,4 @@
-c:\Users\renan\Área de Trabalho\imgc:\Users\renan\Área de Trabalho\To_do#!/bin/bash
+#!/bin/bash
 
 # Arquivo que guarda as tarefas
 tasksFilePath="$HOME/Tasks.txt"
