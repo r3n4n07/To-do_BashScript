@@ -2,6 +2,10 @@
 
 Desenvolvi esse projeto para práticar e aprimorar meus conhecimentos em Linux e Bash script.
 
+# Vídeo do script funcionando
+
+Link Youtube: https://youtu.be/g0XZFzmfsJw?si=l36mzJo-KNyugWSX
+
 ## 🚀 Funcionalidades
 
 - ✅ Adicionar uma nova tarefa
